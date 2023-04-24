@@ -1,13 +1,75 @@
-<div>
-    <div style="display: block">
-      <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [options]="barChartType"            
-              >
-              <!-- [chartType]="barChartType" -->
-      </canvas>
-    </div>
-  </div>
+<h1>Line chart</h1>
+<div style="display: block;">
+  <canvas baseChart width="400" height="400"
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend">
+  </canvas>
+</div>
+<h1>Bar chart</h1>
+
+<canvas baseChart
+[data]="barChartData"
+[options]="barChartOptions"
+[plugins]="barChartPlugins"
+[legend]="barChartLegend"
+[type]="'bar'">
+</canvas>
+
+<h1>Doughnut chart</h1>
+
+<canvas baseChart
+        [labels]="doughnutChartLabels"
+        [datasets]="doughnutChartDatasets"
+        [options]="doughnutChartOptions"
+        [legend]="true"
+        [type]="'doughnut'">
+</canvas>
+
+<h1>pie chart</h1>
+
+<canvas baseChart
+  [type]="'pie'"
+  [datasets]="pieChartDatasets"
+  [labels]="pieChartLabels"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+  [legend]="pieChartLegend">
+</canvas>
+
+<h1>Radar chart</h1>
+
+<canvas baseChart
+        [datasets]="radarChartDatasets"
+        [options]="radarChartOptions"
+        [labels]="radarChartLabels"
+        [type]="'radar'">
+</canvas>
+
+<h1>Polar Area chart</h1>
+
+<canvas baseChart
+        [datasets]="polarAreaChartDatasets"
+        [labels]="polarAreaChartLabels"
+        [legend]="polarAreaLegend"
+        [options]="polarAreaOptions"
+        [type]="'polarArea'">
+</canvas>
+
+<h1>Bubble  chart</h1>
+<canvas baseChart
+        [datasets]="bubbleChartDatasets"
+        [options]="bubbleChartOptions"
+        [legend]="bubbleChartLegend"
+        [type]="'bubble'">
+</canvas>
+
+
+<h1>Scatter  chart</h1>
+
+<canvas baseChart
+        [datasets]="scatterChartDatasets"
+        [options]="scatterChartOptions"
+        [type]="'scatter'">
+</canvas>

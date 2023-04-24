@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { ChartConfiguration } from 'chart.js';
 import { ApexNonAxisChartSeries, ApexChart, ApexResponsive, ChartComponent } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -14,35 +15,22 @@ export type ChartOptions = {
   styleUrls: ['./my-doughnut-chart.component.css']
 })
 export class MyDoughnutChartComponent  {
-	// @ViewChild("chart") chart: ChartComponent;
 
-
-
-	// public chartOptions: Partial<ChartOptions>;
+	//step2
+	public doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+	public doughnutChartDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
+		{ data: [ 350, 450, 100 ], label: 'Series A' },
+		{ data: [ 50, 150, 120 ], label: 'Series B' },
+		{ data: [ 250, 130, 70 ], label: 'Series C' }
+	  ];
   
-	// constructor() {
-	//   this.chartOptions = {
-	// 	series: [44, 55, 13, 43, 22],
-	// 	chart: {
-	// 	  type: "donut"
-	// 	},
-	// 	labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-	// 	responsive: [
-	// 	  {
-	// 		breakpoint: 480,
-	// 		options: {
-	// 		  chart: {
-	// 			width: 200
-	// 		  },
-	// 		  legend: {
-	// 			position: "bottom"
-	// 		  }
-	// 		}
-	// 	  }
-	// 	]
-	//   };
-// }
+	public doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
+	  responsive: false
+	};
   
+
+	//step1
+	
   chartOptions = {
 	  animationEnabled: true,
 	  title: {
